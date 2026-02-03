@@ -21,7 +21,7 @@
                         { "Str", 16 }, { "Dex", 16 }, { "Con", 25 },
                         { "Int", 23 }, { "Wis", 25 }, { "Cha", 22 }
                     },
-                    Sentidos = "Senses Perception +14; darkvision",
+                    Sentidos = "Perception +14; darkvision",
                     Idiomas = "Languages Deep Speech, telepathy 20",
                     Habilidades = new List<string> { "Arcana +19", "Dungeoneering +20", "Insight +17" }
                 },
