@@ -12,7 +12,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="CriaturasGURPS\Elemental_Agua.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="CriaturasGURPS\Esqueleto.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="CriaturasGURPS\Goblin.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="CriaturasGURPS\Grifo.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="CriaturasGURPS\LoboGigante.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
