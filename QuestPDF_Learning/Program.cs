@@ -2,11 +2,13 @@
 using QuestPDF.Fluent;
 using QuestPDF_Learning.Ejercicio1_TiquetCompra;
 using QuestPDF_Learning.Ejercicio2_HojaMonstruo;
+using QuestPDF_Learning.Ejercicio3_BestiarioGURPS;
 
 QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
 
 // Ejercicio1_TicketCompra();
-Ejercicio2_PaginaMonstruo();
+// Ejercicio2_PaginaMonstruo();
+Ejercicio3_MonstruoGurps();
 
 void Ejercicio1_TicketCompra()
 {
@@ -23,5 +25,16 @@ void Ejercicio2_PaginaMonstruo()
     MonstruoDocument monstruoDocument = new(monstruo);
 
     Document.Create(monstruoDocument.Compose)
+        .ShowInCompanion();
+}
+
+void Ejercicio3_MonstruoGurps()
+{
+    // Desde archivo
+    var grifo = MarkdownCriaturaGURPSParser.ParsearDesdeArchivo("grifo.md");
+
+    CriaturaGURPSDocument gurpsDocument = new(grifo);
+
+    Document.Create(gurpsDocument.Compose)
         .ShowInCompanion();
 }

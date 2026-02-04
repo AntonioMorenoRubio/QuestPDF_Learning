@@ -11,4 +11,10 @@
     <PackageReference Include="QuestPDF" Version="2025.12.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Grifo.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
