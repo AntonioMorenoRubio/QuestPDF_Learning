@@ -13,7 +13,21 @@ namespace QuestPDF_Learning.Ejercicio3_BestiarioGURPS
             Criatura = criatura;
         }
 
-        public DocumentMetadata GetMetadata() => DocumentMetadata.Default;
+        public DocumentMetadata GetMetadata() => AssignMetadata();
+
+        private DocumentMetadata AssignMetadata()
+        {
+            return new DocumentMetadata
+            {
+                Title = "Bestiario Personal para GURPS",
+                Author = "Antonio Moreno Rubio",
+                Keywords = "bestiario, gurps, monstruos",
+                Language = "es-ES",
+                CreationDate = DateTimeOffset.Now,
+                ModifiedDate = DateTimeOffset.Now
+            };
+        }
+
         public DocumentSettings GetSettings() => DocumentSettings.Default;
 
         public void Compose(IDocumentContainer container)
@@ -22,6 +36,7 @@ namespace QuestPDF_Learning.Ejercicio3_BestiarioGURPS
             {
                 page.Size(PageSizes.A4);
                 page.Margin(40);
+                page.DefaultTextStyle(x => x.FontFamily("Segoe UI"));
                 page.Content().Element(ComposeContent);
             });
         }
