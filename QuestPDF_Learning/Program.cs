@@ -31,7 +31,7 @@ void Ejercicio2_PaginaMonstruo()
 void Ejercicio3_MonstruoGurps()
 {
     // Desde archivo
-    var grifo = MarkdownCriaturaGURPSParser.ParsearDesdeArchivo("grifo.md");
+    var grifo = MarkdownCriaturaGURPSParser.ParsearDesdeArchivo("CriaturasGURPS/Grifo.md");
 
     CriaturaGURPSDocument gurpsDocument = new(grifo);
 
