@@ -1,12 +1,12 @@
 # Lobo Gigante
 Animal
 
-## Descripción
-Un lobo del tamaño de un caballo, con pelaje gris oscuro y ojos amarillos brillantes. Sus colmillos son tan largos como dagas.
+## DescripciÃ³n
+Un lobo del tamaÃ±o de un caballo, con pelaje gris oscuro y ojos amarillos brillantes. Sus colmillos son tan largos como dagas.
 
-## Hábitat
+## HÃ¡bitat
 - Bosque
-- Montaña
+- MontaÃ±a
 - Tundra
 
 ## Comportamiento
@@ -16,7 +16,7 @@ Cazador en manada. Coordinan ataques para derribar presas grandes. Altamente ter
 Casi imposible de entrenar si no se captura como cachorro. Requiere Manejo de Animales-5 y $8,000.
 
 ## Notas especiales
-Los lobos gigantes tienen un aullido que puede escucharse a kilómetros de distancia, alertando a otros de su manada.
+Los lobos gigantes tienen un aullido que puede escucharse a kilÃ³metros de distancia, alertando a otros de su manada.
 
 ## Ficha de Combate
 
@@ -30,7 +30,7 @@ Los lobos gigantes tienen un aullido que puede escucharse a kilómetros de distan
 - **SM:** +1 (1 hex)
 
 ### Movimiento
-- **Velocidad básica:** 6.75
+- **Velocidad bÃ¡sica:** 6.75
 - **Movimiento (Tierra):** 9
 
 ### Defensas
@@ -44,18 +44,18 @@ Los lobos gigantes tienen un aullido que puede escucharse a kilómetros de distan
 
 ### Rasgos relevantes
 - Olfato Agudo +4
-- Oído Agudo +2
+- OÃ­do Agudo +2
 - Reflejos de Combate
-- Cuadrúpedo
+- CuadrÃºpedo
 - Animal Salvaje
 
 ### Habilidades
 - **Brawling:** 15
 - **Tracking:** 14
 
-### Táctica
+### TÃ¡ctica
 Rodean a la presa y atacan en oleadas. El alfa muerde primero mientras otros distraen.
 
-### Variantes rápidas
+### Variantes rÃ¡pidas
 - **Cachorro:** ST -8, DX -2, HP -8
 - **Alfa:** ST +2, HP +3, Liderazgo +12

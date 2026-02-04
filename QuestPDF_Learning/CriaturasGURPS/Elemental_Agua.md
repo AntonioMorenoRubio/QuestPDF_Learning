@@ -1,12 +1,12 @@
 # Elemental de Agua
 Elemental
 
-## Descripción
+## DescripciÃ³n
 Una masa de agua viviente con forma humanoide. Su cuerpo fluye constantemente y puede adoptar diferentes formas.
 
-## Hábitat
-- Océano
-- Río
+## HÃ¡bitat
+- OcÃ©ano
+- RÃ­o
 - Lago
 - Plano Elemental del Agua
 
@@ -17,7 +17,7 @@ Protege cuerpos de agua de intrusos. Neutral a menos que se le provoque o su hog
 No puede ser entrenado. Puede ser invocado o controlado mediante magia.
 
 ## Notas especiales
-Inmune a daño por corte o perforación cuando está en forma líquida. Vulnerable a frío extremo.
+Inmune a daÃ±o por corte o perforaciÃ³n cuando estÃ¡ en forma lÃ­quida. Vulnerable a frÃ­o extremo.
 
 ## Ficha de Combate
 
@@ -31,7 +31,7 @@ Inmune a daño por corte o perforación cuando está en forma líquida. Vulnerable a
 - **SM:** +2 (3 hexes)
 
 ### Movimiento
-- **Velocidad básica:** 6.5
+- **Velocidad bÃ¡sica:** 6.5
 - **Movimiento (Tierra):** 4
 - **Movimiento (Agua):** 12
 
@@ -43,22 +43,22 @@ Inmune a daño por corte o perforación cuando está en forma líquida. Vulnerable a
 - **Envolver (13):** Agarre especial, Alcance C
 
 ### Armadura
-- **DR:** 0 (inmune a corte/perforación)
+- **DR:** 0 (inmune a corte/perforaciÃ³n)
 
 ### Rasgos relevantes
 - Anfibio
 - No Respira
-- Inmunidad (corte, perforación)
-- Vulnerabilidad (frío, x2)
+- Inmunidad (corte, perforaciÃ³n)
+- Vulnerabilidad (frÃ­o, x2)
 - Forma Amorfa
 
 ### Habilidades
 - **Brawling:** 13
 - **Swimming:** 16
 
-### Táctica
-Intenta envolver a enemigos para ahogarlos. Si está en agua profunda, arrastra a las víctimas al fondo.
+### TÃ¡ctica
+Intenta envolver a enemigos para ahogarlos. Si estÃ¡ en agua profunda, arrastra a las vÃ­ctimas al fondo.
 
-### Variantes rápidas
+### Variantes rÃ¡pidas
 - **Menor:** ST -10, HP -10, SM +0
 - **Mayor:** ST +10, HP +15, SM +3

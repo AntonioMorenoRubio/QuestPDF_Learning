@@ -1,22 +1,22 @@
 # Goblin
 Humanoide (Goblinoide)
 
-## DescripciÛn
-Criatura pequeÒa y verde con orejas puntiagudas y dientes afilados. Viste harapos y huele mal.
+## Descripci√≥n
+Criatura peque√±a y verde con orejas puntiagudas y dientes afilados. Viste harapos y huele mal.
 
-## H·bitat
+## H√°bitat
 - Cueva
 - Ruinas
-- Subterr·neo
+- Subterr√°neo
 
 ## Comportamiento
-Cobarde cuando est· solo, peligroso en grupo. Prefiere emboscadas y trampas a combate directo.
+Cobarde cuando est√° solo, peligroso en grupo. Prefiere emboscadas y trampas a combate directo.
 
 ## Entrenamiento
-No aplicable. Son seres inteligentes (aunque astutos m·s que sabios).
+No aplicable. Son seres inteligentes (aunque astutos m√°s que sabios).
 
 ## Notas especiales
-Los goblins tienen aversiÛn a la luz del sol (-2 a todas las tiradas bajo luz solar directa).
+Los goblins tienen aversi√≥n a la luz del sol (-2 a todas las tiradas bajo luz solar directa).
 
 ## Ficha de Combate
 
@@ -30,7 +30,7 @@ Los goblins tienen aversiÛn a la luz del sol (-2 a todas las tiradas bajo luz so
 - **SM:** -1
 
 ### Movimiento
-- **Velocidad b·sica:** 6.0
+- **Velocidad b√°sica:** 6.0
 - **Movimiento (Tierra):** 6
 
 ### Defensas
@@ -44,10 +44,10 @@ Los goblins tienen aversiÛn a la luz del sol (-2 a todas las tiradas bajo luz so
 - **DR:** 2 (armadura de cuero)
 
 ### Rasgos relevantes
-- VisiÛn Nocturna
-- CobardÌa
-- AversiÛn a la Luz Solar
-- BÌpedo
+- Visi√≥n Nocturna
+- Cobard√≠a
+- Aversi√≥n a la Luz Solar
+- B√≠pedo
 
 ### Habilidades
 - **Espada Corta:** 12
@@ -55,9 +55,9 @@ Los goblins tienen aversiÛn a la luz del sol (-2 a todas las tiradas bajo luz so
 - **Sigilo:** 14
 - **Trampas:** 11
 
-### T·ctica
+### T√°ctica
 Dispara desde cobertura y huye si es superado. Usa trampas para nivelar el campo de batalla.
 
-### Variantes r·pidas
+### Variantes r√°pidas
 - **Jefe Goblin:** ST +2, IQ +1, HP +2, Liderazgo +10
-- **Cham·n Goblin:** IQ +2, FP +5, Magia +12
+- **Cham√°n Goblin:** IQ +2, FP +5, Magia +12

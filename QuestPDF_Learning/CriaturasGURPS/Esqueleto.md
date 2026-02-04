@@ -1,17 +1,17 @@
 # Esqueleto Guerrero
 No-Muerto
 
-## Descripción
-Restos reanimados de un guerrero caído. Viste armadura oxidada y empuña armas antiguas.
+## DescripciÃ³n
+Restos reanimados de un guerrero caÃ­do. Viste armadura oxidada y empuÃ±a armas antiguas.
 
-## Hábitat
+## HÃ¡bitat
 - Cripta
 - Cementerio
 - Ruinas
 - Mazmorra
 
 ## Comportamiento
-Sigue órdenes de su creador sin cuestionarlas. Sin un maestro, patrulla su área asignada atacando intrusos.
+Sigue Ã³rdenes de su creador sin cuestionarlas. Sin un maestro, patrulla su Ã¡rea asignada atacando intrusos.
 
 ## Entrenamiento
 No aplicable. Creado mediante nigromancia, no entrenado.
@@ -31,7 +31,7 @@ Inmune a veneno, enfermedad, y efectos mentales. Puede ser destruido con magia s
 - **SM:** +0
 
 ### Movimiento
-- **Velocidad básica:** 6.0
+- **Velocidad bÃ¡sica:** 6.0
 - **Movimiento (Tierra):** 6
 
 ### Defensas
@@ -49,15 +49,15 @@ Inmune a veneno, enfermedad, y efectos mentales. Puede ser destruido con magia s
 - No Respira
 - Inmunidad (veneno, enfermedad, mental)
 - Sin Mente Propia
-- Fragilidad (daño sagrado x2)
+- Fragilidad (daÃ±o sagrado x2)
 
 ### Habilidades
 - **Espada:** 13
 - **Escudo:** 12
 
-### Táctica
-Avanza metódicamente. Sin miedo ni autopreservación. Lucha hasta ser destruido.
+### TÃ¡ctica
+Avanza metÃ³dicamente. Sin miedo ni autopreservaciÃ³n. Lucha hasta ser destruido.
 
-### Variantes rápidas
+### Variantes rÃ¡pidas
 - **Esqueleto Arquero:** DX +1, Arco +14
-- **Campeón Esqueleto:** ST +3, HP +5, habilidades +2
+- **CampeÃ³n Esqueleto:** ST +3, HP +5, habilidades +2
