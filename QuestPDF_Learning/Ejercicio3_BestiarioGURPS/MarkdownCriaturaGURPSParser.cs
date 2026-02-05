@@ -15,6 +15,26 @@ namespace QuestPDF_Learning.Ejercicio3_BestiarioGURPS
             return valor.Replace("*", "").Trim();
         }
 
+        private static string ExtraerIdSeccion(string lineaEncabezado)
+        {
+            // Extrae {#id} o usa el título normalizado
+            var match = Regex.Match(lineaEncabezado, @"(.+?)\s*\{#(.+?)\}");
+            if (match.Success)
+            {
+                return match.Groups[2].Value.Trim().ToLowerInvariant();
+            }
+
+            // Fallback: normaliza el título
+            string sinAlmohadillas = Regex.Replace(lineaEncabezado, @"^#+\s*", ""); // Quita todos los # del inicio
+
+            return sinAlmohadillas
+                .Trim()
+                .ToLowerInvariant()
+                .Replace("á", "a").Replace("é", "e").Replace("í", "i")
+                .Replace("ó", "o").Replace("ú", "u").Replace("ñ", "n")
+                .Replace(" ", "");
+        }
+
         public static CriaturaGURPS ParsearDesdeTexto(string markdown)
         {
             var criatura = new CriaturaGURPS
@@ -49,63 +69,56 @@ namespace QuestPDF_Learning.Ejercicio3_BestiarioGURPS
                     continue;
                 }
 
-                // Secciones principales (##)
-                if (linea.StartsWith("## "))
+                // Secciones principales (##) y Subsecciones (###)
+                if (linea.StartsWith("## ") || linea.StartsWith("### "))
                 {
-                    seccionActual = linea.Substring(3).Trim();
-                    continue;
-                }
-
-                // Subsecciones (###)
-                if (linea.StartsWith("### "))
-                {
-                    seccionActual = linea.Substring(4).Trim();
+                    seccionActual = ExtraerIdSeccion(linea);
                     continue;
                 }
 
                 // Procesar contenido según sección
                 switch (seccionActual)
                 {
-                    case "Descripción":
+                    case "descripcion":
                         criatura.Descripcion = (criatura.Descripcion ?? "") + linea + " ";
                         break;
 
-                    case "Hábitat":
+                    case "habitat":
                         if (linea.StartsWith("- "))
                             criatura.Habitat.Add(linea.Substring(2).Trim());
                         break;
 
-                    case "Comportamiento":
+                    case "comportamiento":
                         criatura.Comportamiento = (criatura.Comportamiento ?? "") + linea + " ";
                         break;
 
-                    case "Entrenamiento":
+                    case "entrenamiento":
                         criatura.Entrenamiento = (criatura.Entrenamiento ?? "") + linea + " ";
                         break;
 
-                    case "Notas especiales":
+                    case "notasespeciales":
                         criatura.NotasEspeciales = (criatura.NotasEspeciales ?? "") + linea + " ";
                         break;
 
-                    case "Atributos":
+                    case "atributos":
                         ParsearAtributo(linea, criatura);
                         break;
 
-                    case "Movimiento":
+                    case "movimiento":
                         ParsearMovimiento(linea, criatura);
                         break;
 
-                    case "Defensas":
+                    case "defensas":
                         if (linea.StartsWith("- **Esquiva:**"))
                         {
                             criatura.Defensas = new DefensasGURPS
                             {
-                                Esquiva = ExtraerNumero(linea)
+                                Esquiva = ExtraerEnteroConSigno(linea)
                             };
                         }
                         break;
 
-                    case "Ataques":
+                    case "ataques":
                         if (linea.StartsWith("- **"))
                         {
                             var ataque = ParsearAtaque(linea);
@@ -114,7 +127,7 @@ namespace QuestPDF_Learning.Ejercicio3_BestiarioGURPS
                         }
                         break;
 
-                    case "Armadura":
+                    case "armadura":
                         if (linea.StartsWith("- **DR:**"))
                         {
                             criatura.Armadura = new ArmaduraGURPS
@@ -124,12 +137,12 @@ namespace QuestPDF_Learning.Ejercicio3_BestiarioGURPS
                         }
                         break;
 
-                    case "Rasgos relevantes":
+                    case "rasgosrelevantes":
                         if (linea.StartsWith("- "))
                             criatura.RasgosRelevantes.Add(linea.Substring(2).Trim());
                         break;
 
-                    case "Habilidades":
+                    case "habilidades":
                         if (linea.StartsWith("- **"))
                         {
                             var habilidad = ParsearHabilidad(linea);
@@ -138,11 +151,11 @@ namespace QuestPDF_Learning.Ejercicio3_BestiarioGURPS
                         }
                         break;
 
-                    case "Táctica":
+                    case "tactica":
                         criatura.Tactica = (criatura.Tactica ?? "") + linea + " ";
                         break;
 
-                    case "Variantes rápidas":
+                    case "variantesrapidas":
                         if (linea.StartsWith("- **"))
                         {
                             var variante = ParsearVariante(linea);
@@ -169,17 +182,17 @@ namespace QuestPDF_Learning.Ejercicio3_BestiarioGURPS
                 criatura.Atributos = new AtributosGURPS();
 
             if (linea.StartsWith("- **ST:**"))
-                criatura.Atributos.ST = ExtraerNumero(linea);
+                criatura.Atributos.ST = ExtraerEnteroConSigno(linea);
             else if (linea.StartsWith("- **DX:**"))
-                criatura.Atributos.DX = ExtraerNumero(linea);
+                criatura.Atributos.DX = ExtraerEnteroConSigno(linea);
             else if (linea.StartsWith("- **IQ:**"))
-                criatura.Atributos.IQ = ExtraerNumero(linea);
+                criatura.Atributos.IQ = ExtraerEnteroConSigno(linea);
             else if (linea.StartsWith("- **HT:**"))
-                criatura.Atributos.HT = ExtraerNumero(linea);
+                criatura.Atributos.HT = ExtraerEnteroConSigno(linea);
             else if (linea.StartsWith("- **HP:**"))
-                criatura.Atributos.HP = ExtraerNumero(linea);
+                criatura.Atributos.HP = ExtraerEnteroConSigno(linea);
             else if (linea.StartsWith("- **FP:**"))
-                criatura.Atributos.FP = ExtraerNumero(linea);
+                criatura.Atributos.FP = ExtraerEnteroConSigno(linea);
             else if (linea.StartsWith("- **SM:**"))
                 criatura.Atributos.SizeModifier = LimpiarValor(linea.Split(':')[1]); // CAMBIO AQUÍ
         }
@@ -198,15 +211,15 @@ namespace QuestPDF_Learning.Ejercicio3_BestiarioGURPS
             }
             else if (linea.StartsWith("- **Movimiento (Tierra):**"))
             {
-                criatura.Movimiento.MovimientoTierra = ExtraerNumero(linea);
+                criatura.Movimiento.MovimientoTierra = ExtraerEnteroConSigno(linea);
             }
             else if (linea.StartsWith("- **Movimiento (Agua):**"))
             {
-                criatura.Movimiento.MovimientoAgua = ExtraerNumero(linea);
+                criatura.Movimiento.MovimientoAgua = ExtraerEnteroConSigno(linea);
             }
             else if (linea.StartsWith("- **Movimiento (Aire):**"))
             {
-                criatura.Movimiento.MovimientoAire = ExtraerNumero(linea);
+                criatura.Movimiento.MovimientoAire = ExtraerEnteroConSigno(linea);
             }
         }
 
@@ -253,16 +266,34 @@ namespace QuestPDF_Learning.Ejercicio3_BestiarioGURPS
             var match = Regex.Match(linea, @"- \*\*(.+?):\*\*\s*(.+)");
             if (!match.Success) return null;
 
-            return new VarianteGURPS
+            var variante = new VarianteGURPS
             {
-                Nombre = match.Groups[1].Value.Trim(),
-                Modificadores = match.Groups[2].Value.Trim()
+                Nombre = match.Groups[1].Value.Trim()
             };
+
+            // Parsear modificadores: "ST -4, DR -2"
+            var modTexto = match.Groups[2].Value.Trim();
+            var partes = modTexto.Split(',');
+
+            foreach (var parte in partes)
+            {
+                var modMatch = Regex.Match(parte.Trim(), @"(\w+)\s*([-+]?\d+)");
+                if (modMatch.Success)
+                {
+                    variante.Modificadores.Add(new ModificadorAtributo
+                    {
+                        Campo = modMatch.Groups[1].Value.Trim(),
+                        Valor = int.Parse(modMatch.Groups[2].Value)
+                    });
+                }
+            }
+
+            return variante;
         }
 
-        private static int ExtraerNumero(string linea)
+        private static int ExtraerEnteroConSigno(string texto)
         {
-            var match = Regex.Match(linea, @"\d+");
+            var match = Regex.Match(texto, @"[-+]?\d+");
             return match.Success ? int.Parse(match.Value) : 0;
         }
     }

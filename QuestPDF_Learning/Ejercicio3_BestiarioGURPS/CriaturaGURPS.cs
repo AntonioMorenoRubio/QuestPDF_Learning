@@ -65,9 +65,20 @@
         public string Valor { get; set; } // "14" o "15 (si entrenado)"
     }
 
+    public class ModificadorAtributo
+    {
+        public string Campo { get; set; }  // "ST", "DR", "HP"
+        public int Valor { get; set; }     // -4, +2
+
+        public override string ToString() => $"{Campo} {(Valor >= 0 ? "+" : "")}{Valor}";
+    }
+
     public class VarianteGURPS
     {
         public string Nombre { get; set; }
-        public string Modificadores { get; set; }
+        public List<ModificadorAtributo> Modificadores { get; set; } = new();
+
+        // Para backward compatibility
+        public string ModificadoresTexto => string.Join(", ", Modificadores);
     }
 }

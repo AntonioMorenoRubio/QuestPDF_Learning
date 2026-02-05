@@ -57,19 +57,25 @@ namespace QuestPDF_Learning.Ejercicio3_BestiarioGURPS
                             .Bold()
                             .FontColor(Colors.White);
 
-                        header.Item()
-                            .Text(Criatura.Tipo ?? "")
-                            .FontSize(12)
-                            .Italic()
-                            .FontColor(Colors.White);
+                        if (!string.IsNullOrWhiteSpace(Criatura.Tipo))
+                        {
+                            header.Item()
+                                .Text(Criatura.Tipo)
+                                .FontSize(12)
+                                .Italic()
+                                .FontColor(Colors.White);
+                        }
                     });
 
                 // DESCRIPCIÓN
-                mainColumn.Item()
-                    .PaddingTop(15)
-                    .Text(Criatura.Descripcion ?? "")
-                    .FontSize(10)
-                    .Italic();
+                if (!string.IsNullOrWhiteSpace(Criatura.Descripcion))
+                {
+                    mainColumn.Item()
+                        .PaddingTop(15)
+                        .Text(Criatura.Descripcion)
+                        .FontSize(10)
+                        .Italic();
+                }
 
                 // Dos columnas principales
                 mainColumn.Item()
@@ -457,7 +463,14 @@ namespace QuestPDF_Learning.Ejercicio3_BestiarioGURPS
                                     .Text(text =>
                                     {
                                         text.Span($"{variante.Nombre}: ").FontSize(9).Bold();
-                                        text.Span(variante.Modificadores).FontSize(9);
+
+                                        // Mostrar modificadores estructurados
+                                        if (variante.Modificadores.Any())
+                                        {
+                                            var modTextos = variante.Modificadores
+                                                .Select(m => $"{m.Campo} {(m.Valor >= 0 ? "+" : "")}{m.Valor}");
+                                            text.Span(string.Join(", ", modTextos)).FontSize(9);
+                                        }
                                     });
                             }
                         });
